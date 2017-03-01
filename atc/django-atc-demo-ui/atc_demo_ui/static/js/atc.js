@@ -146,6 +146,14 @@ var Atc = React.createClass({
         return false;
       }
 
+      if (x !== null && y === null) {
+        return true;
+      }
+
+      if (x === null && y !== null) {
+        return true;
+      }
+
       if (Array.isArray(x) || Array.isArray(y)) {
         return x.toString() === y.toString();
       }

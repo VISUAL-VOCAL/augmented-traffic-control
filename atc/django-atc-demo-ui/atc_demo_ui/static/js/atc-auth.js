@@ -137,8 +137,9 @@ var AuthFrame = React.createClass({
     var controlled_ips = null;
     if (this.state.auth.controlled_ips.length > 0) {
       controlled_ips = this.state.auth.controlled_ips.map(function (addr) {
+        var valid_until = new Date(addr.valid_until*1000).toLocaleTimeString();
         return (
-          <li><pre><code>{addr}</code></pre></li>
+          <li><pre><code>{addr.controlled_ip} (until {valid_until})</code></pre></li>
         );
       });
       controlled_ips = (
